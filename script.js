@@ -62,9 +62,6 @@ slideContent.addEventListener("touchend", (e) => {
 // Initial load
 updateGallery();
 
-
-
-
 // Tic Tac Toe
 const board = Array(9).fill(null);
 let gameOver = false;
@@ -178,37 +175,37 @@ resetBtn.addEventListener("click", () => {
 
 // Array of 30 random fun facts (all lowercase)
 const funFacts = [
-  "there’s a species of fungus that can control an ant’s mind and force it to climb before killing it.",
-  "baby carrots are often sprayed with hydrogen peroxide to stay white and crisp.",
-  "humans can get brain-eating amoebas from warm freshwater lakes.",
-  "some people have died from laughing too much.",
-  "the inventor of the guillotine died by falling off a horse and accidentally decapitating himself.",
-  "there’s a jellyfish that can revert to its juvenile stage and essentially live forever.",
-  "rats can laugh when tickled, but humans can’t hear it without special equipment.",
-  "cannibalistic crickets exist and will eat weaker crickets alive.",
-  "some tapeworms can grow longer than 30 feet inside a human gut.",
-  "humans shed about 600,000 particles of skin every hour.",
-  "there’s a fish that literally eats its own offspring after birth.",
-  "some serial killers had pets that they fed human remains to.",
-  "your stomach gets a new lining every 3-4 days to avoid digesting itself.",
-  "there’s a parasite that makes spiders spin ‘zombie’ webs to protect it.",
-  "the blood of horseshoe crabs is blue and extremely valuable for detecting bacteria.",
-  "there are abandoned cities where bodies of residents were left behind due to disease outbreaks.",
-  "some people can swallow their eyes slightly without damage, a phenomenon called globe luxation.",
-  "cockroaches can survive for weeks without their head before dying of starvation.",
-  "there’s a frog that can freeze solid in winter and thaw in spring to continue living.",
-  "humans have tiny mites living in their eyelashes and eyebrows.",
-  "some fungi grow out of insect corpses and literally sprout from their head.",
-  "there’s a condition where people feel pain from touch that doesn’t exist, called allodynia.",
-  "rats will commit suicide in groups if trapped and stressed enough, a phenomenon called 'rat despair'.",
-  "there’s a parasite that turns infected rats fearless, making them walk straight into cats’ mouths.",
-  "the average human poops about 1.5 pounds of bacteria-filled waste daily.",
-  "some sharks can go into a trance when flipped upside down.",
-  "humans can experience sleep paralysis and hallucinate shadow people watching them.",
-  "there are people who can hear their eyeballs move when they look around.",
-  "some octopuses will eat their own arms under extreme stress.",
-  "there are fungi that make ants climb trees and cling to leaves before the ant dies, called ‘zombie ants’ again.",
-  "human fingernails continue to grow for months after death in some cases due to skin dehydration."
+  "there’s a species of fungus that can control an ant’s mind and force it to climb before killing it. 🍄",
+  "baby carrots are often sprayed with hydrogen peroxide to stay white and crisp. 🥕",
+  "humans can get brain-eating amoebas from warm freshwater lakes. 🧠",
+  "some people have died from laughing too much. 😂",
+  "the inventor of the guillotine died by falling off a horse and accidentally decapitating himself. ⚔️",
+  "there’s a jellyfish that can revert to its juvenile stage and essentially live forever. 🪼",
+  "rats can laugh when tickled, but humans can’t hear it without special equipment. 🐀",
+  "cannibalistic crickets exist and will eat weaker crickets alive. 🦗",
+  "some tapeworms can grow longer than 30 feet inside a human gut. 🪱",
+  "humans shed about 600,000 particles of skin every hour. 🧴",
+  "there’s a fish that literally eats its own offspring after birth. 🐟",
+  "some serial killers had pets that they fed human remains to. 😼",
+  "your stomach gets a new lining every 3-4 days to avoid digesting itself. 🫀",
+  "there’s a parasite that makes spiders spin ‘zombie’ webs to protect it. 🕷️",
+  "the blood of horseshoe crabs is blue and extremely valuable for detecting bacteria. 🩸",
+  "there are abandoned cities where bodies of residents were left behind due to disease outbreaks. 🏚️",
+  "some people can swallow their eyes slightly without damage, a phenomenon called globe luxation. 👁️",
+  "cockroaches can survive for weeks without their head before dying of starvation. 🪳",
+  "there’s a frog that can freeze solid in winter and thaw in spring to continue living. 🐸",
+  "humans have tiny mites living in their eyelashes and eyebrows. 👀",
+  "some fungi grow out of insect corpses and literally sprout from their head. 🍄",
+  "there’s a condition where people feel pain from touch that doesn’t exist, called allodynia. 🌡️",
+  "rats will commit suicide in groups if trapped and stressed enough, a phenomenon called 'rat despair'. 🐀",
+  "there’s a parasite that turns infected rats fearless, making them walk straight into cats’ mouths. 🐱",
+  "the average human poops about 1.5 pounds of bacteria-filled waste daily. 💩",
+  "some sharks can go into a trance when flipped upside down. 🦈",
+  "humans can experience sleep paralysis and hallucinate shadow people watching them. 😱",
+  "there are people who can hear their eyeballs move when they look around. 👁️",
+  "some octopuses will eat their own arms under extreme stress. 🐙",
+  "there are fungi that make ants climb trees and cling to leaves before the ant dies, called ‘zombie ants’ again. 🐜",
+  "human fingernails continue to grow for months after death in some cases due to skin dehydration. 💅"
 ];
 
 const factText = document.getElementById("funfact-text");
@@ -232,3 +229,36 @@ refreshBtn.addEventListener("click", () => {
   setTimeout(() => icon.classList.remove("spin"), 500);
 });
 
+const darkModeBtn = document.getElementById('dark-mode-toggle');
+const darkModeIcon = darkModeBtn.querySelector('i');
+
+// Detect system preference
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+// Set initial theme based on system preference
+if (prefersDark) {
+  document.body.classList.add('dark-mode');
+  // Button shows "sun" to indicate switching to light mode
+  darkModeIcon.classList.remove('fa-moon');
+  darkModeIcon.classList.add('fa-sun');
+} else {
+  document.body.classList.remove('dark-mode');
+  // Button shows "moon" to indicate switching to dark mode
+  darkModeIcon.classList.remove('fa-sun');
+  darkModeIcon.classList.add('fa-moon');
+}
+
+// Toggle button functionality
+darkModeBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+
+  if(document.body.classList.contains('dark-mode')){
+    darkModeIcon.classList.remove('fa-moon');
+    darkModeIcon.classList.add('fa-sun'); // currently in dark mode, button shows "sun" to switch to light
+  } else {
+    darkModeIcon.classList.remove('fa-sun');
+    darkModeIcon.classList.add('fa-moon'); // currently in light mode, button shows "moon" to switch to dark
+  }
+});
+
+document.getElementById('current-year').textContent = new Date().getFullYear();
