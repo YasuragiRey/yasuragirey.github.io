@@ -1,10 +1,9 @@
-/* -------------------- Global Styles -------------------- */
-/* Import Poppins */
+/* ==================== Global Styles ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif; /* apply globally */
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(to bottom, #cfe8ff, #f9e79f);
   color: #222;
   line-height: 1.6;
@@ -16,7 +15,11 @@ body {
   padding: 20px;
 }
 
-/* -------------------- Header -------------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ==================== Header ==================== */
 .header {
   text-align: center;
   margin-bottom: 30px;
@@ -28,10 +31,6 @@ body {
   border-radius: 50%;
   border: 4px solid gold;
   object-fit: cover;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
 }
 
 h1 {
@@ -53,7 +52,7 @@ h1 {
   color: #003366;
 }
 
-/* -------------------- Funfact Section -------------------- */
+/* ==================== Funfact ==================== */
 .info {
   background: white;
   padding: 15px;
@@ -61,41 +60,35 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   margin-bottom: 20px;
   text-align: center; 
-  position: relative;
-  font-family: 'Poppins', sans-serif;
+  position: relative; /* required for absolute button positioning */
 }
 
-.funfact-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #d6336c; 
-  text-transform: none;
-  letter-spacing: 1px;
-}
-
-#funfact-text {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-/* Refresh Button */
 #funfact-refresh {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  position: absolute;
+  position: absolute; /* now relative to .info */
   bottom: 10px;
   right: 10px;
   color: #d6336c;
+  z-index: 10; /* ensures it’s above text */
+  transition: transform 0.2s, color 0.2s;
 }
 
 #funfact-refresh:hover {
   color: gold;
-  transform: rotate(20deg); 
-  transition: transform 0.2s, color 0.2s;
+  transform: rotate(20deg);
+}
+
+#funfact-refresh i {
+  color: inherit; /* inherit from button so hover works */
+  transition: transform 0.5s ease;
+}
+
+#funfact-refresh:hover {
+  color: gold;
+  transform: rotate(20deg);
 }
 
 #funfact-refresh i {
@@ -112,7 +105,7 @@ h1 {
   animation: spin 0.5s linear;
 }
 
-/* -------------------- Grid Layout -------------------- */
+/* ==================== Grid Layout ==================== */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -124,13 +117,11 @@ h1 {
   gap: 15px;
 }
 
-/* -------------------- Box Styling -------------------- */
 .box {
   background: white;
   padding: 15px;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-family: 'Poppins', sans-serif;
 }
 
 .box h2 {
@@ -139,7 +130,7 @@ h1 {
   color: #003366;
 }
 
-/* -------------------- Grid Areas -------------------- */
+/* Grid Areas */
 .about { grid-area: about; }
 .hobbies { grid-area: hobbies; }
 .fandom { grid-area: fandom; }
@@ -149,7 +140,7 @@ h1 {
 .ttt { grid-area: ttt; }
 .spotify { grid-area: spotify; }
 
-/* -------------------- Find Me Links -------------------- */
+/* ==================== Social Links ==================== */
 .findme a {
   font-size: 1.5rem;
   margin-right: 10px;
@@ -157,7 +148,8 @@ h1 {
   text-decoration: none;
 }
 
-.findme a:hover {
+.findme a:hover,
+.social-icons a:hover {
   color: gold;
 }
 
@@ -174,11 +166,7 @@ h1 {
   text-decoration: none;
 }
 
-.social-icons a:hover {
-  color: gold;
-}
-
-/* -------------------- Gallery Slider -------------------- */
+/* ==================== Gallery ==================== */
 .slider {
   display: flex;
   align-items: center;
@@ -197,20 +185,9 @@ h1 {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.slide-left {
-  transform: translateX(-100%);
-  opacity: 0;
-}
-
-.slide-right {
-  transform: translateX(100%);
-  opacity: 0;
-}
-
-.slide-in {
-  transform: translateX(0);
-  opacity: 1;
-}
+.slide-left { transform: translateX(-100%); opacity: 0; }
+.slide-right { transform: translateX(100%); opacity: 0; }
+.slide-in { transform: translateX(0); opacity: 1; }
 
 .slider button {
   background: none;
@@ -218,12 +195,9 @@ h1 {
   font-size: 2rem;
   cursor: pointer;
   color: #003366;
-  font-family: 'Poppins', sans-serif;
 }
 
-.slider button:hover {
-  color: gold;
-}
+.slider button:hover { color: gold; }
 
 .slide-content {
   display: flex;
@@ -245,11 +219,7 @@ h1 {
   justify-content: center;
 }
 
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.image-box img { width: 100%; height: 100%; object-fit: cover; }
 
 #gallery-caption {
   margin-top: 8px;
@@ -258,7 +228,7 @@ h1 {
   text-align: center;
 }
 
-/* -------------------- Tic Tac Toe -------------------- */
+/* ==================== Tic Tac Toe ==================== */
 .ttt-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -279,7 +249,6 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   user-select: none;
-  font-family: 'Poppins', sans-serif;
 }
 
 .cell[data-index="0"] { border-top-left-radius: 12px; }
@@ -300,31 +269,22 @@ h1 {
   color: #fff;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
 }
 
-.reset:hover {
-  background: #b02a58;
-}
+.reset:hover { background: #b02a58; }
 
-.message img {
-  max-width: 150px;
-  height: auto;
-  margin-top: 5px;
-}
+.message img { max-width: 150px; height: auto; margin-top: 5px; }
 
-/* -------------------- Spotify / Track Cards -------------------- */
+/* ==================== Spotify Tracks ==================== */
 .track-row {
   display: flex;
   align-items: center;
   text-decoration: none; 
-  background: #fff; 
   border-radius: 12px;
   padding: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   margin-bottom: 8px;
-  font-family: 'Poppins', sans-serif;
 }
 
 .track-row:hover {
@@ -340,79 +300,107 @@ h1 {
   margin-right: 10px;
 }
 
-.track-info {
-  display: flex;
-  flex-direction: column;
-}
+.track-info { display: flex; flex-direction: column; }
+.track-info p { margin: 0; color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.track-title { font-weight: 600; font-size: 0.9rem; }
+.track-artist { font-size: 0.8rem; color: rgba(255,255,255,0.8); }
 
-.track-info p {
-  color: white;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-  margin: 0;
-}
-
-.track-title {
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.track-artist {
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.8);
-}
-
-/* -------------------- Responsive for Mobile -------------------- */
-/* Mobile adjustments */
+/* ==================== Responsive ==================== */
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
     grid-template-areas:
-      "about"
-      "hobbies"
-      "interests"
-      "games"
-      "fandom"
-      "findme"
-      "gallery"
-      "ttt"
-      "spotify";
+      "about" "hobbies" "interests" "games" "fandom" "findme" "gallery" "ttt" "spotify";
     gap: 10px;
   }
 
-  /* Reduce padding for small screens */
-  .box {
-    padding: 10px;
-  }
-
-  /* Make avatar smaller on mobile */
-  .avatar {
-    width: 120px;
-    height: 120px;
-  }
-
-  /* Reduce header text size */
-  h1 {
-    font-size: 1.5rem;
-  }
-  .tagline, .quote {
-    font-size: 0.8rem;
-  }
-
-  /* Gallery size */
-  .image-box {
-    width: 150px;
-    aspect-ratio: 1/1;
-  }
-
-  .slider button {
-    font-size: 1.5rem;
-  }
-
-  /* Tic Tac Toe board smaller */
-  .cell {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
+  .box { padding: 10px; }
+  .avatar { width: 120px; height: 120px; }
+  h1 { font-size: 1.5rem; }
+  .tagline, .quote { font-size: 0.8rem; }
+  .image-box { width: 150px; }
+  .slider button { font-size: 1.5rem; }
+  .cell { width: 60px; height: 60px; font-size: 1.5rem; }
 }
 
+/* ==================== Dark Mode ==================== */
+body.dark-mode {
+  background: linear-gradient(to bottom, #141727, #3a3522);
+  color: #ddd;
+}
+
+body.dark-mode .box,
+body.dark-mode .info {
+  background: #222;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #f0f0f0;
+}
+
+
+body.dark-mode .funfact-title { color: #ff87c1; }
+body.dark-mode #funfact-refresh { color: #ff87c1; }
+body.dark-mode #funfact-refresh:hover { color: gold; }
+
+body.dark-mode .track-row { background: #333; box-shadow: 0 2px 6px rgba(0,0,0,0.5); }
+body.dark-mode .track-info p { color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.7); }
+
+body.dark-mode .nick,
+body.dark-mode .findme a,
+body.dark-mode .social-icons a { color: #ff87c1; }
+
+body.dark-mode .tagline { color: #fff; }
+body.dark-mode .quote { color: #cfe8ff; }
+
+body.dark-mode .reset {
+  background: #ff87c1;
+  color: #222;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .reset:hover { background: gold; color: #222; }
+
+/* ==================== Dark Mode Toggle Button ==================== */
+#dark-mode-toggle {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #d6336c;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s, background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#dark-mode-toggle:hover {
+  transform: rotate(20deg);
+  background: gold;
+  color: #222;
+}
+
+/* ==================== Footer ==================== */
+#site-footer {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 0.85rem;
+  color: #222;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.dark-mode #site-footer { color: #fff; }
