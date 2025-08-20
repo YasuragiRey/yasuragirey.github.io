@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yasuragi Reyana</title>
-  <link rel="icon" type="image/png" href="/images/favicon.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="image/icon.png">
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
   <div class="profile">
-    <!-- Avatar + Name -->
+
+    <!-- Header Section: Avatar, Name, Pronouns, Quote -->
     <div class="header">
       <img src="https://i.pinimg.com/736x/bc/4e/04/bc4e04617b7601450f20db54588aec23.jpg" alt="avatar" class="avatar">
       <h1><span class="nick">"yasuragi"</span></h1>
@@ -21,19 +23,18 @@
       <p class="quote">“i blinked twice but no one helped.”</p>
     </div>
 
-<!-- Funfact Box -->
-<div class="info">
-  <h3 class="funfact-title">random unhinged funfact (because why not?)</h3>
-  <p id="funfact-text"></p>
-  <button id="funfact-refresh" title="refresh">
-    <i class="fa-solid fa-rotate-right"></i>
-  </button>
-</div>
+    <!-- Funfact Box -->
+    <div class="info">
+      <h3 class="funfact-title">random unhinged funfact (because why not?)</h3>
+      <p id="funfact-text"></p>
+      <button id="funfact-refresh" title="refresh">
+        <i class="fa-solid fa-rotate-right"></i>
+      </button>
+    </div>
 
-
-
-    <!-- Grid Layout -->
+    <!-- Main Grid Layout -->
     <div class="container">
+
       <!-- About Me -->
       <div class="box about">
         <h2>✧･ﾟ: *✧･ﾟ:* about me</h2>
@@ -47,6 +48,7 @@
           <li>unhinged once you know me well — no going back</li>
           <li>procrastinating is my second nature</li>
           <li>my eyesight is –0.5s</li>
+          <li>uses “yasuragi” online because it closely reflects the meaning of my real name</li>
         </ul>
       </div>
 
@@ -88,7 +90,7 @@
         </ul>
       </div>
 
-      <!-- Find Me -->
+      <!-- Find Me / Social Links -->
       <div class="box findme">
         <h2>✧･ﾟ: *✧･ﾟ:* find me</h2>
         <div class="social-icons">
@@ -114,7 +116,7 @@
         </div>
       </div>
 
-      <!-- Tic Tac Toe -->
+      <!-- Tic Tac Toe Game -->
       <div class="box ttt">
         <h2>✧･ﾟ: *✧･ﾟ:* tictactoe</h2>
         <div class="ttt-board">
@@ -135,61 +137,62 @@
         <button class="reset">reset</button>
       </div>
 
-      <!-- Spotify Section -->
+      <!-- Spotify / Track Cards -->
       <div class="box spotify">
         <h2>✧･ﾟ: *✧･ﾟ:* top tracks</h2>
         <div class="spotify-list">
-
-        <a href="https://open.spotify.com/track/5I7hYNW8P1TLdxurADkxN6?si=612fec9843db4f07" 
-          target="_blank" class="track-row" style="background:#48587e;">
-          <img src="https://upload.wikimedia.org/wikipedia/en/f/fe/One_Ok_Rock_-_Detox.jpeg" alt="The Pilot - ONE OK ROCK">
-          <div class="track-info">
-            <p class="track-title">The Pilot &lt;/3</p>
-            <p class="track-artist">ONE OK ROCK</p>
-          </div>
-        </a>
-
-        <a href="https://open.spotify.com/track/6MYt4UaoTAi7brJd9USgyX" target="_blank" class="track-row" style="background:#c7141c;">
-          <img src="https://i.scdn.co/image/ab67616d0000b2731ccfaf5b5a356e8379a1e1e7" alt="Pierce - ONE OK ROCK">
-          <div class="track-info">
-            <p class="track-title">Pierce</p>
-            <p class="track-artist">ONE OK ROCK</p>
-          </div>
-        </a>
-
-        <a href="https://open.spotify.com/track/4btYb7Tfjw5bQazC6bQXpl" target="_blank" class="track-row" style="background:#bf883f;">
-          <img src="https://www.lyrical-nonsense.com/wp-content/uploads/2024/10/King-Gnu-Nekko.jpg" alt="ねっこ - King Gnu">
-          <div class="track-info">
-            <p class="track-title">ねっこ</p>
-            <p class="track-artist">King Gnu</p>
-          </div>
-        </a>
-
-        <a href="https://open.spotify.com/track/1JRNrJKTQhfvxII8kkIcAQ" target="_blank" class="track-row" style="background:#606060;">
-          <img src="https://i.scdn.co/image/ab67616d0000b27322805a1b17e41ae357bd98bc" alt="Mo-Eh-Wa - Fujii Kaze">
-          <div class="track-info">
-            <p class="track-title">Mo-Eh-Wa</p>
-            <p class="track-artist">Fujii Kaze</p>
-          </div>
-        </a>
-
-        <a href="https://open.spotify.com/track/0qvaVHSOXhRXNnSIqvoxK6" target="_blank" class="track-row" style="background:#57585b;">
-          <img src="https://i.scdn.co/image/ab67616d00001e022bde8cbc82d6900dd920873d" alt="merry go round (メリーゴーランド) - Griffin Puatu">
-          <div class="track-info">
-            <p class="track-title">merry go round (メリーゴーランド) - Japanese ver.</p>
-            <p class="track-artist">Griffin Puatu</p>
-          </div>
-        </a>
-
-
+          <a href="https://open.spotify.com/track/5I7hYNW8P1TLdxurADkxN6?si=612fec9843db4f07" target="_blank" class="track-row" style="background:#48587e;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/fe/One_Ok_Rock_-_Detox.jpeg" alt="The Pilot - ONE OK ROCK">
+            <div class="track-info">
+              <p class="track-title">The Pilot &lt;/3</p>
+              <p class="track-artist">ONE OK ROCK</p>
+            </div>
+          </a>
+          <a href="https://open.spotify.com/track/6MYt4UaoTAi7brJd9USgyX" target="_blank" class="track-row" style="background:#c7141c;">
+            <img src="https://i.scdn.co/image/ab67616d0000b2731ccfaf5b5a356e8379a1e1e7" alt="Pierce - ONE OK ROCK">
+            <div class="track-info">
+              <p class="track-title">Pierce</p>
+              <p class="track-artist">ONE OK ROCK</p>
+            </div>
+          </a>
+          <a href="https://open.spotify.com/track/4btYb7Tfjw5bQazC6bQXpl" target="_blank" class="track-row" style="background:#bf883f;">
+            <img src="https://www.lyrical-nonsense.com/wp-content/uploads/2024/10/King-Gnu-Nekko.jpg" alt="ねっこ - King Gnu">
+            <div class="track-info">
+              <p class="track-title">ねっこ</p>
+              <p class="track-artist">King Gnu</p>
+            </div>
+          </a>
+          <a href="https://open.spotify.com/track/1JRNrJKTQhfvxII8kkIcAQ" target="_blank" class="track-row" style="background:#606060;">
+            <img src="https://i.scdn.co/image/ab67616d0000b27322805a1b17e41ae357bd98bc" alt="Mo-Eh-Wa - Fujii Kaze">
+            <div class="track-info">
+              <p class="track-title">Mo-Eh-Wa</p>
+              <p class="track-artist">Fujii Kaze</p>
+            </div>
+          </a>
+          <a href="https://open.spotify.com/track/0qvaVHSOXhRXNnSIqvoxK6" target="_blank" class="track-row" style="background:#57585b;">
+            <img src="https://i.scdn.co/image/ab67616d00001e022bde8cbc82d6900dd920873d" alt="merry go round (メリーゴーランド) - Griffin Puatu">
+            <div class="track-info">
+              <p class="track-title">merry go round (メリーゴーランド) - Japanese ver.</p>
+              <p class="track-artist">Griffin Puatu</p>
+            </div>
+          </a>
         </div>
       </div>
 
     </div>
   </div>
 
-  <!-- Link External JS -->
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" title="Toggle Dark Mode">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer id="site-footer">
+    &copy; <span id="current-year"></span> "yasuragi". all rights reserved.
+  </footer>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
-
